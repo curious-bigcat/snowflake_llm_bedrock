@@ -1,0 +1,137 @@
+- answer: There are 5806 rows in the data table.
+  input: How many rows are in the data table?
+  sql_cmd: SELECT count(*) FROM data;
+  sql_result: '[(5806,)]'
+  table_info: |
+    CREATE TABLE DATA(
+    title VARCHAR,
+    type VARCHAR,
+    release_year INT,
+    age_certification VARCHAR,
+    runtime INT,
+    genres VARCHAR,
+    production_countries VARCHAR,
+    seasons INT,
+    imdb_id VARCHAR,
+    imdb_score INT,
+    imdb_votes INT
+    );
+
+- answer: There are 400 title starts with 'A'.
+  input: How many titles starts with 'A'?
+  sql_cmd: SELECT * FROM data WHERE title LIKE 'a%';
+  sql_result: '[(400,)]'
+  table_info: |
+    CREATE TABLE DATA(
+    title VARCHAR,
+    type VARCHAR,
+    release_year INT,
+    age_certification VARCHAR,
+    runtime INT,
+    genres VARCHAR,
+    production_countries VARCHAR,
+    seasons INT,
+    imdb_id VARCHAR,
+    imdb_score INT,
+    imdb_votes INT
+    );
+
+- answer: There are 11 titles where genre is fantasy.
+  input: How many titles are there where genre is fantasy?
+  sql_cmd: SELECT count(*) FROM data WHERE genres = 'fantasy';
+  sql_result: '[(11,)]'
+  table_info: |
+    CREATE TABLE DATA(
+    title VARCHAR,
+    type VARCHAR,
+    release_year INT,
+    age_certification VARCHAR,
+    runtime INT,
+    genres VARCHAR,
+    production_countries VARCHAR,
+    seasons INT,
+    imdb_id VARCHAR,
+    imdb_score INT,
+    imdb_votes INT
+    );
+
+
+- answer: There are 631 rows in the data table.
+  input: How many titles are there where genre includes fantasy?
+  sql_cmd: SELECT COUNT(*) AS NumberOfFantasyTitles FROM titles WHERE genre LIKE '%fantasy%';
+  sql_result: '[(631,)]'
+  table_info: |
+    CREATE TABLE DATA(
+    title VARCHAR,
+    type VARCHAR,
+    release_year INT,
+    age_certification VARCHAR,
+    runtime INT,
+    genres VARCHAR,
+    production_countries VARCHAR,
+    seasons INT,
+    imdb_id VARCHAR,
+    imdb_score INT,
+    imdb_votes INT
+    );
+
+- answer: There are 25 movies with imbd rating above 8.
+  input: what is the count of title with type movies having imdb score above 8?
+  sql_cmd: SELECT COUNT(*) AS NumberOfHighRatedMovies FROM data WHERE type = 'MOVIE' AND imdb_score > 8;
+  sql_result: '[(25,)]'
+  table_info: |
+    table_info: |
+    CREATE TABLE DATA(
+    title VARCHAR,
+    type VARCHAR,
+    release_year INT,
+    age_certification VARCHAR,
+    runtime INT,
+    genres VARCHAR,
+    production_countries VARCHAR,
+    seasons INT,
+    imdb_id VARCHAR,
+    imdb_score INT,
+    imdb_votes INT
+    );
+
+- answer: There are 47 movies with imbd rating above 8 and contains genre comedy
+  input: List all titles with genre containing comedy?
+  sql_cmd: SELECT * FROM data WHERE genres LIKE '%comedy%' AND imdb_score > 8;
+  sql_result: '[(25,)]'
+  table_info: |
+    table_info: |
+    CREATE TABLE DATA(
+    title VARCHAR,
+    type VARCHAR,
+    release_year INT,
+    age_certification VARCHAR,
+    runtime INT,
+    genres VARCHAR,
+    production_countries VARCHAR,
+    seasons INT,
+    imdb_id VARCHAR,
+    imdb_score INT,
+    imdb_votes INT
+    );
+
+- answer: There are 67 movies in release year 2019 in genres containing drama and runtime over 2 hrs
+  input: List titles released in 2019 with genre drama and runtime over 2 hours?
+  sql_cmd: SELECT title FROM data WHERE release_year = 2019 AND genres LIKE '%drama%' AND runtime > 120;
+  sql_result: '[(67,)]'
+  table_info: |
+    table_info: |
+    CREATE TABLE DATA(
+    title VARCHAR,
+    type VARCHAR,
+    release_year INT,
+    age_certification VARCHAR,
+    runtime INT,
+    genres VARCHAR,
+    production_countries VARCHAR,
+    seasons INT,
+    imdb_id VARCHAR,
+    imdb_score INT,
+    imdb_votes INT
+    );
+
