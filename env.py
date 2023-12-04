@@ -1,0 +1,7 @@
+snowflake_account = "xxxxxx"
+user = "xxxxxx"
+password = "xxxxxx"
+database = "xxxxxx"
+schema = "xxxxxx"
+role = "xxxxxx" 
+warehouse_name = "xxxxxx"
